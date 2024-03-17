@@ -1,0 +1,113 @@
+<form class="max-w-sm mx-auto" [formGroup]="newCustomerForm">
+  <div class="mb-5">
+    <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900"
+      >First Name <span class="text-red-600">*</span></label
+    >
+    <input
+      formControlName="firstName"
+      type="text"
+      id="firstName"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    @if((fc['firstName'].touched || submitted) && fc['firstName'].invalid) {
+    @if(fc['firstName'].hasError('required')) {
+    <div class="mt-2 text-sm text-red-600">
+      Please enter the customer's first name.
+    </div>
+    } @else if (fc['firstName'].hasError('maxlength')) {
+    <div class="mt-2 text-sm text-red-600">
+      First name must not exceed 50 characters.
+    </div>
+    } }
+  </div>
+  <div class="mb-5">
+    <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900"
+      >Last Name <span class="text-red-600">*</span></label
+    >
+    <input
+      formControlName="lastName"
+      type="text"
+      id="lastName"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    @if((fc['lastName'].touched || submitted) && fc['lastName'].invalid) {
+    @if(fc['lastName'].hasError('required')) {
+    <div class="mt-2 text-sm text-red-600">
+      Please enter the customer's last name.
+    </div>
+    }@else if (fc['lastName'].hasError('maxlength')) {
+    <div class="mt-2 text-sm text-red-600">
+      Last name must not exceed 50 characters.
+    </div>
+    } }
+  </div>
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900"
+      >Email <span class="text-red-600">*</span></label
+    >
+    <input
+      formControlName="email"
+      type="email"
+      id="email"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    @if((fc['email'].touched || submitted) && fc['email'].invalid) {
+    <div class="mt-2 text-sm text-red-600">Please enter a valid email.</div>
+    }
+  </div>
+  <div class="mb-5">
+    <label
+      for="mobileNumber"
+      class="block mb-2 text-sm font-medium text-gray-900"
+      >Mobile Number (10 digits) <span class="text-red-600">*</span></label
+    >
+    <input
+      formControlName="mobileNumber"
+      type="tel"
+      id="mobileNumber"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+      placeholder="0412345678"
+    />
+    @if((fc['mobileNumber'].touched || submitted) && fc['mobileNumber'].invalid)
+    {
+    <div class="mt-2 text-sm text-red-600">
+      Please enter the customer's 10-digit mobile number.
+    </div>
+    }
+  </div>
+  <div class="mb-5">
+    <label for="address" class="block mb-2 text-sm font-medium text-gray-900"
+      >Address <span class="text-red-600">*</span></label
+    >
+    <input
+      #address
+      formControlName="address"
+      type="text"
+      id="address"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    @if((fc['address'].touched || submitted) && fc['address'].invalid) {
+    @if(fc['address'].hasError('required')) {
+    <div class="mt-2 text-sm text-red-600">
+      Please enter the customer's last name.
+    </div>
+    }@else if (fc['address'].hasError('maxlength')) {
+    <div class="mt-2 text-sm text-red-600">
+      The address must not exceed 250 characters.
+    </div>
+    }}
+  </div>
+
+  <button
+    (click)="addNewCustomer()"
+    type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+  >
+    Save Customer Details
+  </button>
+</form>
