@@ -1,1 +1,29 @@
-<p>customer-list works!</p>
+<div class="flex justify-center">
+  <div class="w-1/2">
+    <h1 class="text-center font-bold text-lg mb-4">Customer List</h1>
+
+    @if(customers.length == 0) {
+    <h2 class="text-center mt-8">There are no customers on the record yet.</h2>
+    <h2 class="text-center mb-4">
+      Add new customers by clicking on the Add New Customer button.
+    </h2>
+    } @else {
+    <div class="flex flex-wrap">
+      @for(customer of customers; track customer.id) {
+      <a
+        href="#"
+        class="block m-1 w-56 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
+      >
+        <div class="flex justify-center items-center mb-2">
+          <img class="max-h-12" src="../../../../assets/user.png" alt="" />
+        </div>
+
+        <h5 class="font-bold tracking-tight text-gray-800 text-center">
+          {{ customer.firstName }} {{ customer.lastName }}
+        </h5>
+      </a>
+      }
+    </div>
+    }
+  </div>
+</div>
