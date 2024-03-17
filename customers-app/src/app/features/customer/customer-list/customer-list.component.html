@@ -11,7 +11,7 @@
     <div class="flex flex-wrap">
       @for(customer of customers; track customer.id) {
       <a
-        href="#"
+        [routerLink]="['/customer/', customer.id]"
         class="block m-1 w-56 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
       >
         <div class="flex justify-center items-center mb-2">

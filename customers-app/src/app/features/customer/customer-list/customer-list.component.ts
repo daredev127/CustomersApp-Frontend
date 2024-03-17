@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CustomerService } from '../../../apis/customer.service';
 import { Customer } from '../../../shared/types/customer/customer';
 import { ErrorMessages } from '../../../error-handling/error-messages';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './customer-list.component.html',
   styleUrl: './customer-list.component.css',
 })

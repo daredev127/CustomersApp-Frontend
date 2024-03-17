@@ -1,0 +1,31 @@
+<div class="flex justify-center">
+  <div class="w-1/2">
+    @if(customer) {
+    <div class="flex justify-center items-center">
+      <div
+        class="block m-1 w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow"
+      >
+        <h1 class="text-center font-bold text-lg mb-4">Customer Details</h1>
+
+        <h5 class="text-gray-700 text-center">
+          <span class="font-bold mr-1">First Name:</span>
+          {{ customer.firstName }}
+        </h5>
+        <h5 class="text-gray-700 text-center">
+          <span class="font-bold mr-1">Last Name:</span> {{ customer.lastName }}
+        </h5>
+        <h5 class="text-gray-700 text-center">
+          <span class="font-bold mr-1">Email:</span> {{ customer.email }}
+        </h5>
+        <h5 class="text-gray-700 text-center">
+          <span class="font-bold mr-1">Mobile Number:</span>
+          {{ customer.mobileNumber }}
+        </h5>
+        <h5 class="text-gray-700 text-center">
+          <span class="font-bold mr-1">Address:</span> {{ customer.address }}
+        </h5>
+      </div>
+    </div>
+    }
+  </div>
+</div>
