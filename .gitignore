@@ -30,4 +30,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-customers-app/src/environments/environment.ts
+customers-app/src/environments/environment.*
